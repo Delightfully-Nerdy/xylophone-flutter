@@ -1,17 +1,62 @@
 import 'package:flutter/material.dart';
-import 'package:english_words/english_words.dart';
+import 'package:audioplayers/audio_cache.dart';
 
 void main() => runApp(XylophoneApp());
 
 class XylophoneApp extends StatelessWidget {
+  void playSound() {
+    final player = AudioCache();
+    player.play('note2.wav');
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         body: SafeArea(
-          child: Center(
-            child: Text(adjectives.last),
-          ),
+          child: Column(children: <Widget>[
+            FlatButton(
+              color: Colors.red,
+              onPressed: () {
+                playSound();
+              },
+            ),
+            FlatButton(
+              color: Colors.orange,
+              onPressed: () {
+                playSound();
+              },
+            ),
+            FlatButton(
+              color: Colors.yellow,
+              onPressed: () {
+                playSound();
+              },
+            ),
+            FlatButton(
+                color: Colors.green,
+                onPressed: () {
+                  playSound();
+                }),
+            FlatButton(
+              color: Colors.teal,
+              onPressed: () {
+                playSound();
+              },
+            ),
+            FlatButton(
+              color: Colors.blue,
+              onPressed: () {
+                playSound();
+              },
+            ),
+            FlatButton(
+              color: Colors.purple,
+              onPressed: () {
+                playSound();
+              },
+            ),
+          ]),
         ),
       ),
     );
